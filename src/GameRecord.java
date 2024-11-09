@@ -3,7 +3,8 @@ public class GameRecord implements Comparable {
     public String playerId;
 
     public GameRecord (String anId, int aScore) {
-        super();
+        playerId = anId;
+        score = aScore;
     }
 
     public int compareTo(int score) {

@@ -26,7 +26,7 @@ public class WheelOfFortuneAIGame extends WheelOfFortune{
 
     @Override
     public GameRecord play() {
-        return super.play();
+        return super.play(this.player.playerId());
     }
 
     @Override
@@ -34,7 +34,6 @@ public class WheelOfFortuneAIGame extends WheelOfFortune{
         for (WheelOfFortunePlayer player : players) {
             this.player = player;
             System.out.println("Player: " + this.player.playerId());
-            //while (playNext()) {
             int i = 0;
             while (i < phraseList.size()) {
                 aGameRecord = play();

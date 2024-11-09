@@ -42,7 +42,7 @@ public class WheelOfFortuneUserGame extends WheelOfFortune {
 
     @Override
     public GameRecord play() {
-        return super.play();
+        return super.play("User");
     }
 
     public AllGamesRecord playAll() {

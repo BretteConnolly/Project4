@@ -9,7 +9,6 @@ public abstract class WheelOfFortune extends Game {
     public StringBuilder hiddenPhrase = new StringBuilder();
     public String previousGuesses = "";
     public List <String> phraseList;
-    public String playerId;
     public GameRecord aGameRecord;
     public abstract char getGuess(String previousGuesses);
 
@@ -65,7 +64,7 @@ public abstract class WheelOfFortune extends Game {
     }
 
 
-    public GameRecord play() {
+    public GameRecord play(String playerId) {
         System.out.print(
                 """
                          
@@ -118,6 +117,7 @@ public abstract class WheelOfFortune extends Game {
             i++;
         }
         aGameRecord = new GameRecord(playerId, score);
+        System.out.println("New Game Record: " + aGameRecord.playerId + ", " + aGameRecord.score);
         reset();
         return aGameRecord;
      }
