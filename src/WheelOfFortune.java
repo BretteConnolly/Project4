@@ -78,7 +78,7 @@ public abstract class WheelOfFortune extends Game {
                         """);
         System.out.println("Keep guessing until you solve. The fewer guesses, the better your score.");
         System.out.println("Phrase: ");
-        if (phrases == 4) {
+        if (phrases == 3) {
             phrases = 0;
         }
         phrase = phraseList.get(phrases);
