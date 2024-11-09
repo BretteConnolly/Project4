@@ -109,6 +109,7 @@ public abstract class WheelOfFortune extends Game {
             if (hiddenPhrase.indexOf("*") == -1) {
                 System.out.println("You did it!");
                 aGameRecord = new GameRecord(playerId, score);
+                System.out.println("New Game Record: " + aGameRecord.playerId + ", " + aGameRecord.score);
                 reset();
                 return aGameRecord;
             }

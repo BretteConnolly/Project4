@@ -30,7 +30,7 @@ public class AllGamesRecord {
         return sum / count;
     }
 
-    public ArrayList highGameList(int n) {
+    public ArrayList highGameList() {
         ArrayList<Integer> sortedScores = new ArrayList <> ();
         for (Integer value : gamesRecord.values()) {
             sortedScores.add(value);
@@ -39,11 +39,12 @@ public class AllGamesRecord {
         return sortedScores;
     }
 
-    public ArrayList highGameList(String playerId, int n) {
+    public ArrayList highGameList(String playerId) {
         ArrayList <Integer> sortedScores = new ArrayList <> ();
         for (String key: gamesRecord.keySet()) {
             if (key.equals(playerId)) {
                 sortedScores.add(gamesRecord.get(key));
+                System.out.println("Sorted scores: " + sortedScores);
             }
         }
         Collections.sort(sortedScores);
@@ -51,13 +52,14 @@ public class AllGamesRecord {
     }
 
     public void stats() {
+        System.out.println("Games Record size: " + gamesRecord.size());
         System.out.println("Average: " + average());
         for (String key: gamesRecord.keySet()) {
             System.out.println("Average for " + key + ": " + average(key));
         }
-        System.out.println("High Game List:" + highGameList(gamesRecord.size()));
+        System.out.println("High Game List:" + highGameList());
         for (String key: gamesRecord.keySet()) {
-            System.out.println("High Game List for " + key + ": " + highGameList(key, gamesRecord.size()));
+            System.out.println("High Game List for " + key + ": " + highGameList(key));
         }
     }
     }
